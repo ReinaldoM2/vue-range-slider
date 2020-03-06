@@ -1,5 +1,5 @@
 {
-  "name": "vue-range-component",
+  "name": "vue-slider-component",
   "version": "1.0.0",
   "description": "A range slider component based on vue (Vue滑块组件).",
   "main": "dist/vue-range-slider.js",
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/xwpongithub/vue-range-slider",
   "repository": {
     "type": "git",
-    "url": "git@github.com:xwpongithub/vue-range-slider.git"
+    "url": "git+ssh://git@github.com/xwpongithub/vue-range-slider.git"
   },
   "scripts": {
     "build": "gulp"
@@ -44,5 +44,6 @@
     "stylus": "^0.54.5",
     "uglify-js": "^3.4.9",
     "zlib": "^1.0.5"
-  }
+  },
+  "dependencies": {}
 }
