@@ -159,7 +159,6 @@ export default {
       type: Boolean,
       default: false
     },
-    // 在范围模式中，是否允许交叉
     enableCross: {
       type: Boolean,
       default: true
@@ -1050,8 +1049,8 @@ export default {
       this.focusFlag = false
     },
     handleKeydown(e) {
-      e.preventDefault()
       e.stopPropagation()
+      e.preventDefault()
       if (!this.useKeyboard) {
         return false
       }
@@ -1139,8 +1138,8 @@ export default {
           addEvent(this.$refs.dot, EVENT_MOUSE_DOWN, this._start)
         }
       }
-      addEvent(document, EVENT_KEY_DOWN, this.handleKeydown)
-      addEvent(document, EVENT_KEY_UP, this.handleKeyup)
+      addEvent(this.$refs.wrap, EVENT_KEY_DOWN, this.handleKeydown)
+      addEvent(this.$refs.wrap, EVENT_KEY_UP, this.handleKeyup)
       addEvent(window, EVENT_RESIZE, this.refresh)
       if (this.isRange && this.tooltipMerge) {
         addEvent(this.$refs.dot0, transitionEnd, this.handleOverlapTooltip)
@@ -1174,8 +1173,8 @@ export default {
           removeEvent(this.$refs.dot, EVENT_MOUSE_DOWN, this._start)
         }
       }
-      removeEvent(document, EVENT_KEY_DOWN, this.handleKeydown)
-      removeEvent(document, EVENT_KEY_UP, this.handleKeyup)
+      removeEvent(this.$refs.wrap, EVENT_KEY_DOWN, this.handleKeydown)
+      removeEvent(this.$refs.wrap, EVENT_KEY_UP, this.handleKeyup)
       removeEvent(window, EVENT_RESIZE, this.refresh)
       if (this.isRange && this.tooltipMerge) {
         removeEvent(this.$refs.dot0, transitionEnd, this.handleOverlapTooltip)
